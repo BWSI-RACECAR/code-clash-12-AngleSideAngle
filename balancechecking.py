@@ -42,13 +42,13 @@ class Solution:
 
             # return starting == ending[::-1]
             map = {"{" : "}", "[" : "]", "(" : ")"}
-            for index, ch in enumerate(parenthesis):
+            for _, ch in enumerate(parenthesis):
                 if ch not in "{([":
                     continue
                 i = parenthesis.index(map[ch])
                 if i == -1:
                     return False
-                parenthesis.pop(i)
+                parenthesis = parenthesis[:i] + parenthesis[i+1:]
             return True
 
 
