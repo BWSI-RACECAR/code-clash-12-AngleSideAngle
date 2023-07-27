@@ -41,12 +41,16 @@ class Solution:
             #          ending += ch
 
             # return starting == ending[::-1]
-            parens = ""
-            for ch in parenthesis:
-                if ch in "{}()[]":
-                    parens += ch
+            map = {"{" : "}", "[" : "]", "(" : ")"}
+            for index, ch in enumerate(parenthesis):
+                if ch not in "{([":
+                    continue
+                i = parenthesis.index(map[ch])
+                if i == -1:
+                    return False
+                parenthesis.pop(i)
+            return True
 
-            return len(parens) % 2 == 0 and parens[:len(parens)//2] == parens[len(parens) // 2:0:-1]
 
 def main():
     str1=input()
