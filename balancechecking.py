@@ -45,7 +45,10 @@ class Solution:
             for _, ch in enumerate(parenthesis):
                 if ch not in "{([":
                     continue
-                i = parenthesis.index(map[ch])
+                try:
+                    i = parenthesis.index(map[ch])
+                except:
+                    return False
                 if i == -1:
                     return False
                 parenthesis = parenthesis[:i] + parenthesis[i+1:]
