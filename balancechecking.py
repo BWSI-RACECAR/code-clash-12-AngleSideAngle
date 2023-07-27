@@ -42,16 +42,17 @@ class Solution:
 
             # return starting == ending[::-1]
             map = {"{" : "}", "[" : "]", "(" : ")"}
-            for _, ch in enumerate(parenthesis):
-                if ch not in "{([":
-                    continue
-                try:
-                    i = parenthesis.index(map[ch])
-                except:
+            for key, value in map.items():
+                key_count = 0
+                val_count = 0
+                for ch in parenthesis:
+                    if ch == key:
+                        key_count += 1
+                    if ch == value:
+                        val_count += 1
+                if key_count != val_count:
                     return False
-                if i == -1:
-                    return False
-                parenthesis = parenthesis[:i] + parenthesis[i+1:]
+                
             return True
 
 
