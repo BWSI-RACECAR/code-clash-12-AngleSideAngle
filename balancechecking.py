@@ -32,15 +32,16 @@ class Solution:
             #return type: boolean
             
             #TODO: Write code below to returnn a boolean value with the solution to the prompt.
-            starting = ""
-            ending = ""
-            for ch in parenthesis:
-                if ch in ("{", "[", "("):
-                    starting += ch
-                else:
-                     ending += ch
+            # starting = ""
+            # ending = ""
+            # for ch in parenthesis:
+            #     if ch in ("{", "[", "("):
+            #         starting += ch
+            #     else:
+            #          ending += ch
 
-            return starting == ending[::-1]
+            # return starting == ending[::-1]
+            return parenthesis == parenthesis[::-1]
 
 def main():
     str1=input()
