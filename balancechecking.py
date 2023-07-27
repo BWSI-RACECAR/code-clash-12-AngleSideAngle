@@ -41,7 +41,12 @@ class Solution:
             #          ending += ch
 
             # return starting == ending[::-1]
-            return parenthesis == parenthesis[::-1]
+            parens = ""
+            for ch in parenthesis:
+                if ch in "{}()[]":
+                    parens += ch
+
+            return parens == parens[::-1]
 
 def main():
     str1=input()
