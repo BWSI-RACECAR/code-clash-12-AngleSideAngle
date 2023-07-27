@@ -46,7 +46,7 @@ class Solution:
                 if ch in "{}()[]":
                     parens += ch
 
-            return parens == parens[::-1]
+            return len(parens) % 2 == 0 and parens[:len(parens)/2] == parens[len(parens) / 2:0:-1]
 
 def main():
     str1=input()
